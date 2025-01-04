@@ -3,10 +3,18 @@ name = "automated-farming-drone"
 requirements = []
 costs_version = 2
 
+[contracts.drone-traits]
+path = "contracts/traits/drone-traits.clar"
+depends_on = []
+
 [contracts.drone-registry]
 path = "contracts/drone-registry.clar"
-depends_on = []
+depends_on = ["drone-traits"]
 
 [contracts.task-manager]
 path = "contracts/task-manager.clar"
-depends_on = ["drone-registry"]
+depends_on = ["drone-registry", "drone-traits"]
+
+[contracts.weather-oracle]
+path = "contracts/weather-oracle.clar"
+depends_on = ["drone-traits"]
