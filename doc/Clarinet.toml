@@ -1,0 +1,12 @@
+[project]
+name = "automated-farming-drone"
+requirements = []
+costs_version = 2
+
+[contracts.drone-registry]
+path = "contracts/drone-registry.clar"
+depends_on = []
+
+[contracts.task-manager]
+path = "contracts/task-manager.clar"
+depends_on = ["drone-registry"]
